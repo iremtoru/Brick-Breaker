@@ -1,14 +1,11 @@
 package View;
 
 import java.awt.Color;
-
-/*
- *author: Idil Utkusoy
- */
 import javax.swing.JFrame;
-
 import Model.Game;
 import Model.GameConfig;
+
+
 
 public class BrickBreaker extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -33,4 +30,5 @@ public class BrickBreaker extends JFrame {
 		setResizable(false);
 		setVisible(true);
 	}
+	
 }

@@ -4,11 +4,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-
-import Model.Ball;
-import Model.Game;
-import Model.GameConfig;
 import View.BrickBreaker;
 import View.HomeScreen;
 
@@ -40,14 +35,22 @@ public class Controller implements ActionListener {
 		} else if (e.getSource() == view.backButton) {
 			cardLayout.show(view.mainPanel, "panel 1");
 		} else if (e.getSource() == view.musicBackBtn || e.getSource() == view.speedBackBtn
-				|| e.getSource() == view.bgBackBtn) {
+				|| e.getSource() == view.bgBackBtn || e.getSource() == view.helpBackBtn) {
 			cardLayout.show(view.mainPanel, "panel 2");
-		} else if(e.getSource() == view.bgWhiteButton) {
+		} else if (e.getSource() == view.bgWhiteButton) {
 			new BrickBreaker(Color.WHITE);
-		} else if(e.getSource() == view.bgGrayButton) {
+		} else if (e.getSource() == view.bgGrayButton) {
 			new BrickBreaker(Color.lightGray);
-		} else if(e.getSource() == view.bgPinkButton) {
+		} else if (e.getSource() == view.bgPinkButton) {
 			new BrickBreaker(Color.pink);
+		} else if (e.getSource() == view.btnOn) {
+			if (view.btnOn.getText() == "On") {
+				view.btnOn.setText("Off");
+				view.music.stopBackgroundSong();
+			} else if (view.btnOn.getText() == "Off") {
+				view.btnOn.setText("On");
+				view.music.playBackgroundSong();
+			}
 		}
 	}
 }
