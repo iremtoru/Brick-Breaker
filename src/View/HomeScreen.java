@@ -29,6 +29,12 @@ public class HomeScreen {
 	public JButton musicBackBtn;
 	public JButton speedBackBtn;
 	public JButton bgBackBtn;
+	public JButton bgWhiteButton;
+	public JButton bgGrayButton;
+	public JButton bgPinkButton;
+	public JButton speedOption1Button;
+	public JButton speedOption2Button;
+	public JButton speedOption3Button;
 
 	/**
 	 * Launch the application.
@@ -176,6 +182,18 @@ public class HomeScreen {
 		speedBackBtn.addActionListener(controller);
 		speedBackBtn.setBackground(new Color(204, 255, 255));
 		speedChangePanel.add(speedBackBtn);
+		
+		speedOption1Button = new JButton("Speed: 1.5");
+		speedOption1Button.addActionListener(controller);
+		speedChangePanel.add(speedOption1Button);
+		
+		speedOption2Button = new JButton("Speed: 2");
+		speedOption2Button.addActionListener(controller);
+		speedChangePanel.add(speedOption2Button);
+		
+		speedOption3Button = new JButton("Speed: 2.5");
+		speedOption3Button.addActionListener(controller);
+		speedChangePanel.add(speedOption3Button);
 	}
 
 	private void prepareBGChangePanel() {
@@ -187,8 +205,19 @@ public class HomeScreen {
 		bgBackBtn = new JButton("<-Back");
 		bgBackBtn.setBounds(10, 380, 150, 30);
 		bgBackBtn.addActionListener(controller);
-		bgBackBtn.setBackground(new Color(204, 255, 255));
 		BGChangePanel.add(bgBackBtn);
+		
+		bgWhiteButton = new JButton("White");
+		bgWhiteButton.addActionListener(controller);
+		BGChangePanel.add(bgWhiteButton);
+		
+		bgGrayButton = new JButton("Gray");
+		bgGrayButton.addActionListener(controller);
+		BGChangePanel.add(bgGrayButton);
+		
+		bgPinkButton = new JButton("Pink");
+		bgPinkButton.addActionListener(controller);
+		BGChangePanel.add(bgPinkButton);
 	}
 
 	private void prepareHelpMenuPanel() {
