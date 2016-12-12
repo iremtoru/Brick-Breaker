@@ -5,22 +5,30 @@ import javax.swing.JButton;
 import java.awt.*;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import Controller.Controller;
-
 import javax.swing.ImageIcon;
 
 public class HomeScreen {
 	public final JPanel mainPanel = new JPanel();
 	private JFrame frame;
 	private JPanel buttonPanel;
-	private JPanel settingsPanel;
+	public JPanel settingsPanel;
 	private JPanel helpMenuPanel;
+	public JPanel musicSettingPanel;
+	public JPanel speedChangePanel;
+	public JPanel BGChangePanel;
 	private Controller controller;
 	public JButton btnStart;
 	public JButton btnSettings;
 	public JButton btnHelpMenu;
 	public JButton btnExit;
+	public JButton BGChangeButton;
+	public JButton musicSettingButton;
+	public JButton speedChangeButton;
+	public JButton backButton;
+	public JButton musicBackBtn;
+	public JButton speedBackBtn;
+	public JButton bgBackBtn;
 
 	/**
 	 * Launch the application.
@@ -58,6 +66,9 @@ public class HomeScreen {
 		prepareButtonPanel();
 		prepareSettingsPanel();
 		prepareHelpMenuPanel();
+		prepareMusicSettingPanel();
+		prepareSpeedChangePanel();
+		prepareBGChangePanel();
 		prepareMainPanel();
 	}
 
@@ -101,9 +112,83 @@ public class HomeScreen {
 		// add contents of the panel
 		settingsPanel = new JPanel();
 
-		JLabel s = new JLabel("SETTINGS PAGE...");
+		musicSettingButton = new JButton("Music Settings");
+		musicSettingButton.setBounds(240, 150, 150, 30);
+		musicSettingButton.addActionListener(controller);
+		musicSettingButton.setBackground(new Color(224, 255, 255));
+		musicSettingButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
+
+		speedChangeButton = new JButton("Change Speed");
+		speedChangeButton.setBounds(240, 200, 150, 30);
+		speedChangeButton.addActionListener(controller);
+		speedChangeButton.setBackground(new Color(224, 255, 255));
+		speedChangeButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
+
+		BGChangeButton = new JButton("Change Backround");
+		BGChangeButton.setBounds(240, 250, 150, 30);
+		BGChangeButton.addActionListener(controller);
+		BGChangeButton.setBackground(new Color(224, 255, 255));
+		BGChangeButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
+
+		JLabel s = new JLabel("SETTINGS");
+		s.setBounds(294, 100, 50, 20);
+
+		backButton = new JButton("<-Back");
+		backButton.setBounds(10, 380, 150, 30);
+		backButton.addActionListener(controller);
+		backButton.setBackground(new Color(204, 255, 255));
+		settingsPanel.setLayout(null);
 
 		settingsPanel.add(s);
+		settingsPanel.add(musicSettingButton);
+		settingsPanel.add(speedChangeButton);
+		settingsPanel.add(BGChangeButton);
+		settingsPanel.add(backButton);
+
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(10, 10, 604, 531);
+		settingsPanel.add(lblNewLabel);
+		lblNewLabel.setIcon(new ImageIcon("wall.jpg"));
+
+	}
+
+	private void prepareMusicSettingPanel() {
+		// TODO Auto-generated method stub
+		musicSettingPanel = new JPanel();
+		JLabel music = new JLabel("music");
+		musicSettingPanel.add(music);
+		
+		musicBackBtn = new JButton("<-Back");
+		musicBackBtn.setBounds(10, 380, 150, 30);
+		musicBackBtn.addActionListener(controller);
+		musicBackBtn.setBackground(new Color(204, 255, 255));
+		musicSettingPanel.add(musicBackBtn);
+	}
+
+	private void prepareSpeedChangePanel() {
+		// TODO Auto-generated method stub
+		speedChangePanel = new JPanel();
+		JLabel speed = new JLabel("speed");
+		speedChangePanel.add(speed);
+		
+		speedBackBtn = new JButton("<-Back");
+		speedBackBtn.setBounds(10, 380, 150, 30);
+		speedBackBtn.addActionListener(controller);
+		speedBackBtn.setBackground(new Color(204, 255, 255));
+		speedChangePanel.add(speedBackBtn);
+	}
+
+	private void prepareBGChangePanel() {
+		// TODO Auto-generated method stub
+		BGChangePanel = new JPanel();
+		JLabel bg = new JLabel("bg");
+		BGChangePanel.add(bg);
+		
+		bgBackBtn = new JButton("<-Back");
+		bgBackBtn.setBounds(10, 380, 150, 30);
+		bgBackBtn.addActionListener(controller);
+		bgBackBtn.setBackground(new Color(204, 255, 255));
+		BGChangePanel.add(bgBackBtn);
 	}
 
 	private void prepareHelpMenuPanel() {
@@ -127,12 +212,10 @@ public class HomeScreen {
 		mainPanel.add(buttonPanel, "panel 1");
 		mainPanel.add(settingsPanel, "panel 2");
 		mainPanel.add(helpMenuPanel, "panel 3");
+		mainPanel.add(musicSettingPanel, "panel 4");
+		mainPanel.add(speedChangePanel, "panel 5");
+		mainPanel.add(BGChangePanel, "panel 6");
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("wall.jpg"));
-		lblNewLabel.setBounds(0, 0, 650, 600);
-		frame.getContentPane().add(lblNewLabel);
-
-		frame.add(mainPanel);
+		frame.getContentPane().add(mainPanel);
 	}
 }
