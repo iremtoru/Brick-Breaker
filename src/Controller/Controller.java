@@ -1,9 +1,14 @@
 package Controller;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+
+import Model.Ball;
+import Model.Game;
+import Model.GameConfig;
 import View.BrickBreaker;
 import View.HomeScreen;
 
@@ -37,6 +42,12 @@ public class Controller implements ActionListener {
 		} else if (e.getSource() == view.musicBackBtn || e.getSource() == view.speedBackBtn
 				|| e.getSource() == view.bgBackBtn) {
 			cardLayout.show(view.mainPanel, "panel 2");
+		} else if(e.getSource() == view.bgWhiteButton) {
+			new BrickBreaker(Color.WHITE);
+		} else if(e.getSource() == view.bgGrayButton) {
+			new BrickBreaker(Color.lightGray);
+		} else if(e.getSource() == view.bgPinkButton) {
+			new BrickBreaker(Color.pink);
 		}
 	}
 }
