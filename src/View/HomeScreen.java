@@ -253,16 +253,16 @@ public class HomeScreen {
 		helpMenuPanel = new JPanel();
 		helpMenuPanel.setLayout(null);
 
-		JLabel helpInfo = new JLabel("Help Info goes here.");
-		helpInfo.setBounds(230, 100, 200, 20);
+		String text = "You can play the game with both arrow keys and the mouse. You can change background color of the game, play/stop the music, change the speed of the ball via Settings Menu";
+		JLabel helpInfo = new JLabel("<html>" + text + "</html>");
+		helpInfo.setBounds(230, 10, 200, 500);
 		helpMenuPanel.add(helpInfo);
-
+		
 		helpBackBtn = new JButton("<-Back");
 		helpBackBtn.setBackground(new Color(204, 255, 255));
 		helpBackBtn.setBounds(10, 380, 150, 30);
 		helpBackBtn.addActionListener(controller);
 		helpMenuPanel.add(helpBackBtn);
-
 	}
 
 	private void prepareMainPanel() {
